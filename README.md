@@ -1,3 +1,3 @@
 ## PT-Activation-Map-Visualiser
 
-TODO
+Personal project in proress
