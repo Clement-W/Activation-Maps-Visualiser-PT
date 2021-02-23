@@ -1,0 +1,12 @@
+---
+epochs : 2 # Number of training epochs
+classes : 10 # Number of classes
+kernels : [16,32,64] # Number of kernels in each convolution layer (16 kernels in the first conv layer in this example)
+batch_size : 128
+learning_rate : 0.001
+dataset : "MNIST"
+architecture : "CNN"
+model_pt_path : "./state_dict_model.pt" # The path of the model's state_dict (used to save and/or load it)
+model_onnx_path : "./model.onnx" # The path of the model at the onnx format (used to save it)
+test_frequency : 1 # Test the model each test_frequency epoch (here, the model is tested at the end of each epoch)
+ 
