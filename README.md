@@ -48,7 +48,7 @@ I've always been curious on what's going on in the different layers of CNNs. Tha
 Moreover, since I'm trying to switch from Tensorflow/Keras to PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
 
 <p align="center">
-    <img src="ResNet-activation-maps/1activ_map_conv1.png" alt="example" width="400" height="400">
+    <img src="example.png" alt="example" width="800" height="400">
 </p>
 
 ### Built With

@@ -1,4 +1,4 @@
-from ActivationMapExtractor import (
+from ActivationMapsExtractor import (
     show_activation_maps,
     load_model_from_config_file,
     save_all_activation_maps,

@@ -2,7 +2,7 @@ from torchvision import models, transforms, datasets
 import torch
 from PIL import Image
 
-from ActivationMapExtractor import save_all_activation_maps
+from ActivationMapsExtractor import save_all_activation_maps
 
 
 def image_loader(image_name, transform):
