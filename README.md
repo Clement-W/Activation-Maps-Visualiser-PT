@@ -1,11 +1,11 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<p align="center">
 
-  <h2 align="center">Activation maps visualizer for PyTorch</h2>
+<h1 align="left">Activation maps visualizer for PyTorch</h1>
 
-</p>
+TODO : Add image
+
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -96,11 +96,13 @@ To get a local copy up and running follow these simple example steps.
 
 ### Try demoRestNet18.py
 
+TODO
+
 
 
 ### Use ActivationMapExtractor.py
 
-
+TODO
 
 
 _For more examples, please refer to the [Documentation](TODO)_
