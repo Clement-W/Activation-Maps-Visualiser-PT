@@ -67,7 +67,7 @@ def get_activation_maps(model, layer_name, image):
 def create_figure(activ_maps, layer_name, image, prediction):
 
     # Display the activation maps with matplotlib
-    fig = plt.figure(figsize=(10, 10), dpi=70)
+    fig = plt.figure(figsize=(10, 10), dpi=80)
     fig.suptitle(
         "Activation maps of the {} {} filters ({}*{}) for the given image ".format(
             activ_maps.shape[0], layer_name, activ_maps.shape[1], activ_maps.shape[1]
