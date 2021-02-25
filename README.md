@@ -63,10 +63,17 @@ To get a local copy up and running follow these simple example steps.
 
 ### Use ActivationMapExtractor.py
 
-TODO
+There is two main way to use this python script :
+
+* Call the function **show_activation_maps(model, layer_name, image)**. This function show the activation maps for a specific layer in the model. 
+* Call the function **save_all_activation_maps(model, image,path_to_directory)**. This function save the activation maps of every layers of the model in the specified directory. 
+
+Check the next section to see an example.
 
 
-### Try this with RestNet-18
+
+
+### Demo with RestNet-18
 
 Import modules :
 ```py
@@ -91,13 +98,15 @@ transform = transforms.Compose([transforms.Resize(256), transforms.CenterCrop(22
 image = transform(image).to(device)
 ```
 
-Save the activation maps of every layers for that input image :
+If you want to see the activation maps of a specific layer by it's name for that input image :
+```py
+show_activation_maps(model,"conv1",image)
+```
+
+If you want to save the activation maps of every layers for that input image :
 ```py
 save_all_activation_maps(model, image,"./ResNet-activation-maps")
 ```
-
-
-
 
 
 <!-- CONTRIBUTING -->
