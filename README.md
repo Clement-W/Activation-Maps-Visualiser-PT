@@ -61,19 +61,44 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 
 
-### Try this with RestNet18
-
-TODO
-
-
-
 ### Use ActivationMapExtractor.py
 
 TODO
 
 
-_For more examples, please refer to the [Documentation](TODO)_
-TODO
+### Try this with RestNet-18
+
+Import modules :
+```py
+from torchvision import models, transforms, datasets
+import torch
+from PIL import Image
+# Import save_all_activation_maps from the ActivationMapsExtractor file
+from ActivationMapsExtractor import save_all_activation_maps
+```
+Set torch device :
+```py
+device = torch.device("cuda:0"  if torch.cuda.is_available() else  "cpu")
+```
+Load pretrained RestNet-18 model from PyTorch :
+```py
+model = models.resnet18(pretrained=True)
+```
+Load an image to feed the ResNet-18 model :
+```py
+image = Image.open("imageNet/sample.JPEG")
+transform = transforms.Compose([transforms.Resize(256), transforms.CenterCrop(224), transforms.ToTensor()])
+image = transform(image).to(device)
+```
+
+Save the activation maps of every layers for that input image :
+```py
+save_all_activation_maps(model, image,"./ResNet-activation-maps")
+```
+
+
+
+
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -94,4 +119,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [ ] Add better comments to the code
 - [ ] Reorganize the repo
 - [ ] Complete the README.md
-
