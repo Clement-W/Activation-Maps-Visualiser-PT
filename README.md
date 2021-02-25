@@ -10,38 +10,6 @@
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li>
-    <a href="#usage">Usage</a>
-      <ul>
-          <li><a href="#try-demorestnet18.py">Try demoRestNet18.py</a></li>
-          <li><a href="#use-activationmapextractor.py">Use ActivationMapExtractor.py</a></li>
-      </ul>
-    </li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#todo-list">Todo list</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -93,7 +61,7 @@ To get a local copy up and running follow these simple example steps.
 ## Usage
 
 
-### Try demoRestNet18.py
+### Try this with RestNet18
 
 TODO
 
