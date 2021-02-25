@@ -4,7 +4,10 @@
 
 <h1 align="left">Activation maps visualizer for PyTorch</h1>
 
-TODO : Add image
+<p align="center">
+    <img src="example.png" alt="example" >
+</p>
+
 
 
 <!-- TABLE OF CONTENTS -->
@@ -46,10 +49,6 @@ _This personal project is still in progress_
 
 I've always been curious on what's going on in the different layers of CNNs. That's why I've created a little PyTorch script to see the activation maps of a specific, or all the CNN's layers. 
 Moreover, since I'm trying to switch from Tensorflow/Keras to PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
-
-<p align="center">
-    <img src="example.png" alt="example" width="800" height="400">
-</p>
 
 ### Built With
 
@@ -122,6 +121,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- TODO LIST -->
 ## Todo list
-TODO 
 
+- [ ] Add a Jupyter notebook demo
+- [ ] Add better comments to the code
+- [ ] Reorganize the repo
+- [ ] Complete the README.md
 
