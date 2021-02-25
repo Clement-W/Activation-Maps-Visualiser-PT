@@ -1,8 +1,12 @@
+import sys
+
 from ActivationMapsExtractor import (
     show_activation_maps,
     load_model_from_config_file,
     save_all_activation_maps,
 )
+
+sys.path.append("./CustomNetwork/")
 from Network import Network
 
 import yaml
@@ -31,7 +35,7 @@ if __name__ == "__main__":
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-    config = yaml.safe_load(open("./NNConfigFile.yaml"))
+    config = yaml.safe_load(open("./CustomNetwork/NNConfigFile.yaml"))
 
     test_loader = make_loader(get_data(False), batch_size=config["batch_size"])
     images, labels = next(iter(test_loader))

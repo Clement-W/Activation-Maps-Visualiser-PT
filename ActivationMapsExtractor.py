@@ -4,17 +4,19 @@ import matplotlib.pyplot as plt
 from matplotlib import image
 import pathlib
 import tqdm
+import sys
 
 import torch
 from torch import nn, optim
 import torchvision
 from torchvision import datasets, transforms
 
+sys.path.append("./CustomNetwork/")
 from Network import Network
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-# Load model from the config file defined in demo.py
+# Load model from the config file defined in demoCustomNetwork.py
 def load_model_from_config_file(config):
     model = Network(config["kernels"], config["classes"]).to(device)
     model.load_state_dict(torch.load(config["model_pt_path"]))
@@ -46,20 +48,22 @@ def get_prediction(model, image):
     return prediction.item()
 
 
-# Return the activation maps the layer
-def get_activation_maps(model, layer_name, image):
-
+# Return the activation maps for every layers in a list
+def get_activation_maps_list(model, image):
     activation_list = {}
     for name, layer in model.named_modules():
         layer.register_forward_hook(get_activation(name, activation_list))
-    # TODO: Improve this to get the activation layer for the specified layer_name and not every layers
 
     with torch.no_grad():
         output = model(image[None, ...]).float().to(device)
+    
+    return activation_list
+
+# Return the activation maps for a specific layer
+def get_activation_maps_by_layer(activation_list, layer_name):
     activ_maps = activation_list[layer_name].detach()
     activ_maps = torchvision.utils.make_grid(activ_maps)
     activ_maps = activ_maps.cpu().numpy()
-
     return activ_maps
 
 
@@ -100,11 +104,12 @@ def create_figure(activ_maps, layer_name, image, prediction):
 # Show the activation maps of a specified layer
 def show_activation_maps(model, layer_name, image):
 
-    activ_maps = get_activation_maps(model, layer_name, image)
+    activ_maps_list = get_activation_maps_list(model, image)
+    activ_maps_layer = get_activation_maps_by_layer(activ_maps_list,layer_name)
 
     prediction = get_prediction(model, image)
 
-    fig = create_figure(activ_maps, layer_name, image, prediction)
+    fig = create_figure(activ_maps_layer, layer_name, image, prediction)
     modelName = model.__class__.__name__
     save_activation_map(fig, layer_name, modelName)
     plt.show()
@@ -135,13 +140,13 @@ def save_all_activation_maps(model, image):
 
     progressB = tqdm.tqdm(enumerate(model.named_modules()), total=total)
 
+    activ_maps_list = get_activation_maps_list(model, image)
+
     for idx, (layer_name, _) in progressB:
 
-        activ_maps = get_activation_maps(model, layer_name, image)
+        activ_maps_layer = get_activation_maps_by_layer(activ_maps_list,layer_name)
 
         prediction = get_prediction(model, image)
-        fig = create_figure(activ_maps, layer_name, image, prediction)
+        fig = create_figure(activ_maps_layer, layer_name, image, prediction)
         save_activation_map(fig, layer_name, modelName, idx)
         plt.close("all")
-
-    # TODO: Comment code
