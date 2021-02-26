@@ -110,33 +110,24 @@ def show_activation_maps(model, layer_name, image):
     prediction = get_prediction(model, image)
 
     fig = create_figure(activ_maps_layer, layer_name, image, prediction)
-    modelName = model.__class__.__name__
-    save_activation_map(fig, layer_name, modelName)
     plt.show()
 
 
 # Save the activation maps in the folder './activation-maps/'
-def save_activation_map(figure, layer_name, modelName, index=-1):
-    pathlib.Path("./{}-activation-maps/".format(modelName)).mkdir(exist_ok=True)
-    if index == -1:
-        plt.savefig(
-            "./{}-activation-maps/activ_map_{}.png".format(modelName, layer_name)
+def save_activation_map(path_to_directory,figure, layer_name, index):
+    plt.savefig(
+        "{}/{}-activ_map_{}.png".format(
+            path_to_directory, index, layer_name
         )
-    else:
-        plt.savefig(
-            "./{}-activation-maps/{}activ_map_{}.png".format(
-                modelName, index, layer_name
-            )
-        )
+    )
 
 
 # Save the activation maps of every layer of the network
-def save_all_activation_maps(model, image):
+def save_all_activation_maps(model, image,path_to_directory):
 
     total = [i for i, (_, _) in enumerate(model.named_modules())][-1]
     print("\n[+] Saving {} images to {}".format(total, pathlib.Path.cwd()))
 
-    modelName = model.__class__.__name__
 
     progressB = tqdm.tqdm(enumerate(model.named_modules()), total=total)
 
@@ -148,5 +139,5 @@ def save_all_activation_maps(model, image):
 
         prediction = get_prediction(model, image)
         fig = create_figure(activ_maps_layer, layer_name, image, prediction)
-        save_activation_map(fig, layer_name, modelName, idx)
+        save_activation_map(path_to_directory,fig, layer_name, idx)
         plt.close("all")

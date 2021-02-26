@@ -1,0 +1,1 @@
+Trained with this pipeline https://github.com/Clement-W/Neural-Networks-with-PyTorch

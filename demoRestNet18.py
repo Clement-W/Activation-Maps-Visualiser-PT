@@ -1,14 +1,12 @@
 from torchvision import models, transforms, datasets
 import torch
 from PIL import Image
-
-from ActivationMapsExtractor import save_all_activation_maps
+from ActivationMapsExtractor import save_all_activation_maps, show_activation_maps
 
 
 def image_loader(image_name, transform):
     image = Image.open(image_name)
-    image = transform(image)
-    image = image.to(device)
+    image = transform(image).to(device)
     return image
 
 
@@ -24,6 +22,7 @@ transform = transforms.Compose(
 
 image = image_loader("imageNet/sample.JPEG", transform)
 
+#show_activation_maps(model,"conv1",image)
+
 # From ActivationMapExtractor.py
-save_all_activation_maps(model, image)
-# Save the images in ./imagenet-activation-maps/
+save_all_activation_maps(model, image,"./ResNet-activation-maps")
