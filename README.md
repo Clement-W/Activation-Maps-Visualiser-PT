@@ -80,8 +80,7 @@ Import modules :
 from torchvision import models, transforms, datasets
 import torch
 from PIL import Image
-# Import save_all_activation_maps from the ActivationMapsExtractor file
-from ActivationMapsExtractor import save_all_activation_maps
+from ActivationMapsExtractor import save_all_activation_maps, show_activation_maps
 ```
 Set torch device :
 ```py
@@ -127,4 +126,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 - [ ] Add a Jupyter notebook demo
 - [ ] Add better comments to the code
 - [ ] Reorganize the repo
-- [ ] Complete the README.md
