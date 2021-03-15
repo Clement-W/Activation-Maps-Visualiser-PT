@@ -13,8 +13,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-_This personal project is still in progress_
-
 I've always been curious on what's going on in the different layers of CNNs. That's why I've created a little PyTorch script to see the activation maps of a specific, or all the CNN's layers. 
 Moreover, since I'm trying to switch from Tensorflow/Keras to PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
 
