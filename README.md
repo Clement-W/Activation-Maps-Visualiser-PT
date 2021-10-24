@@ -14,7 +14,7 @@
 ## About The Project
 
 I've created a little PyTorch script to see the activation maps of a specific, or all the CNN's layers. 
-Since I'm trying to switch from Tensorflow/Keras to PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
+Since I'm learning PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
 
 ### Built With
 
