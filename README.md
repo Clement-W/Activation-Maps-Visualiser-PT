@@ -13,7 +13,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I've created a little PyTorch script to see the activation maps of a specific, or all the CNN's layers. 
+I've created a little PyTorch script to display the activation maps of a specific, or all the CNN's layers. 
 Since I'm learning PyTorch, I thought it would be interesting to do this little project to get used to handling torch objects and tensors.
 
 ### Built With
@@ -26,7 +26,7 @@ Since I'm learning PyTorch, I thought it would be interesting to do this little 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
 
@@ -61,10 +61,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Use ActivationMapExtractor.py
 
-There is two main way to use this python script :
+There is two main ways to use this python script :
 
-* Call the function **show_activation_maps(model, layer_name, image)**. This function show the activation maps for a specific layer in the model. 
-* Call the function **save_all_activation_maps(model, image,path_to_directory)**. This function save the activation maps of every layers of the model in the specified directory. 
+* Call the function **show_activation_maps(model, layer_name, image)**. This function shows the activation maps for a specific layer in the model. 
+* Call the function **save_all_activation_maps(model, image,path_to_directory)**. This function saves the activation maps of every layers of the model in the specified directory. 
 
 Check the next section to see an example.
 
